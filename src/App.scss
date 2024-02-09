@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+//! ==================================================================
+//! VARIABLES
+//! ==================================================================
+$themeColor: #ff0000;
+$themeFont: "Noto Sans", sans-serif;
+
+//! ==================================================================
+//! DEFAULT CSS
+//! ==================================================================
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: $themeFont;
+}
+
+a {
+     text-decoration: none;
+     color: black;
+     transition: all 0.3s linear;
+     cursor: pointer;
+     &:hover {
+          color: $themeColor;
+     }
+}
+
+img {
+     width: 100%;
+}
+
+//! ==================================================================
+//! HEADER
+//! ==================================================================
+header {
+     padding: 10px 20px;
+     height: 66px;
+     .inner-grid {
+          display: grid;
+          grid-template-columns: 1fr 400px;
+          align-items: center;
+          gap: 30px;
+          .left-block {
+               display: grid;
+               grid-template-columns: 40px 1fr;
+               gap: 20px;
+               .menu-links {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    .menu-item {
+                         position: relative;
+                         cursor: pointer;
+                         &::after {
+                              background: $themeColor;
+                              width: 0;
+                              top: 100%;
+                              position: absolute;
+                              left: 50%;
+                              transform: translate(-50%, 10px);
+                              height: 2px;
+                              content: "";
+                              transition: all 0.3s linear;
+                         }
+                         &:before {
+                              content: "";
+                              width: 0;
+                              position: absolute;
+                              top: 100%;
+                              left: -5px;
+                              height: 22px;
+                         }
+                         &:hover,
+                         &.active {
+                              color: $themeColor;
+                              &::after,
+                              &::before {
+                                   width: calc(100% + 10px);
+                              }
+                         }
+                    }
+                    .mega-drop {
+                         width: 100vw;
+                         background: white;
+                         position: fixed;
+                         top: 66px;
+                         left: 0;
+                         box-shadow:
+                              rgba(0, 0, 0, 0.16) 0px 3px 6px,
+                              rgba(0, 0, 0, 0.23) 0px 3px 6px;
+                         .inner-grid {
+                              padding: 20px 100px;
+                              display: grid;
+                              gap: 20px;
+                              align-items: start;
+                              &.seven-grid {
+                                   grid-template-columns: repeat(7, 1fr);
+                              }
+                              &.four-grid {
+                                   grid-template-columns: repeat(4, 1fr);
+                              }
+                              .block {
+                                   font-size: 0.75rem;
+                                   letter-spacing: 2px;
+                                   text-transform: uppercase;
+                                   .block-head {
+                                        color: $themeColor;
+                                        margin-bottom: 20px;
+                                        display: block;
+                                   }
+                                   .block-list {
+                                        display: grid;
+                                        gap: 10px;
+                                        a {
+                                             color: grey;
+                                        }
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+          .right-block {
+               display: flex;
+               justify-content: flex-end;
+               gap: 20px;
+               i {
+                    font-size: 1.3rem;
+               }
+               .login {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+               }
+               .super-icon {
+                    position: relative;
+                    .count {
+                         position: absolute;
+                         top: 0;
+                         right: 0;
+                         background: $themeColor;
+                         width: 15px;
+                         height: 15px;
+                         font-size: 0.7rem;
+                         text-align: center;
+                         color: white;
+                         border-radius: 3px;
+                         transform: translate(7px, -5px);
+                    }
+               }
+          }
+     }
+}

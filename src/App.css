@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+a:hover {
+  color: #ff0000;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  padding: 10px 20px;
+  height: 66px;
+}
+header .inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  align-items: center;
+  gap: 30px;
+}
+header .inner-grid .left-block {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+}
+header .inner-grid .left-block .menu-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .inner-grid .left-block .menu-links .menu-item {
+  position: relative;
+  cursor: pointer;
+}
+header .inner-grid .left-block .menu-links .menu-item::after {
+  background: #ff0000;
+  width: 0;
+  top: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  height: 2px;
+  content: "";
+  transition: all 0.3s linear;
+}
+header .inner-grid .left-block .menu-links .menu-item:before {
+  content: "";
+  width: 0;
+  position: absolute;
+  top: 100%;
+  left: -5px;
+  height: 22px;
+}
+header .inner-grid .left-block .menu-links .menu-item:hover, header .inner-grid .left-block .menu-links .menu-item.active {
+  color: #ff0000;
+}
+header .inner-grid .left-block .menu-links .menu-item:hover::after, header .inner-grid .left-block .menu-links .menu-item:hover::before, header .inner-grid .left-block .menu-links .menu-item.active::after, header .inner-grid .left-block .menu-links .menu-item.active::before {
+  width: calc(100% + 10px);
+}
+header .inner-grid .left-block .menu-links .mega-drop {
+  width: 100vw;
+  background: white;
+  position: fixed;
+  top: 66px;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid {
+  padding: 20px 100px;
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid.seven-grid {
+  grid-template-columns: repeat(7, 1fr);
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid.four-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid .block {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid .block .block-head {
+  color: #ff0000;
+  margin-bottom: 20px;
+  display: block;
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid .block .block-list {
+  display: grid;
+  gap: 10px;
+}
+header .inner-grid .left-block .menu-links .mega-drop .inner-grid .block .block-list a {
+  color: grey;
+}
+header .inner-grid .right-block {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+header .inner-grid .right-block i {
+  font-size: 1.3rem;
+}
+header .inner-grid .right-block .login {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .inner-grid .right-block .super-icon {
+  position: relative;
+}
+header .inner-grid .right-block .super-icon .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ff0000;
+  width: 15px;
+  height: 15px;
+  font-size: 0.7rem;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  transform: translate(7px, -5px);
+}/*# sourceMappingURL=App.css.map */
